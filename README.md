@@ -74,7 +74,6 @@ yarn dev
 
 ## 📁 Project Structure
 
-- Static assets should be stored in `config/static/[page-name]/index.js`
 - Use Cloudinary for image optimization (Bonus Points! 🎁)
 - Follow Next.js 14+ app directory structure
 - Use Next.js Image component for all images (Required)
@@ -95,7 +94,7 @@ yarn dev
 ### Best Practices
 - Keep components small and focused on a single responsibility
 - Implement proper prop typing for all components
-- Create shared constants in `/config/constants/` directory
+- Create shared constants in `/config/constants/[page-name]/index.js` directory
 - Use proper naming conventions for files and components
 
 ### Directory Structure
