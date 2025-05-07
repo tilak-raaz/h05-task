@@ -203,6 +203,6 @@ Your PR will be evaluated based on:
 - Review the provided video tutorial
 - Ping Me!
 - Look for similar issues on stackoverflow!
-Remeber: The more you make bugs the more you learn!
+- Remember: The more you make bugs the more you learn!
 
 Happy Coding! 🚀 
