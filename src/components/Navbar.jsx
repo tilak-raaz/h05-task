@@ -12,7 +12,7 @@ import Link from 'next/link';
 function Navbar({ className }) {
      const [active, setActive] = useState (null);
   return (
-      <div  className={cn("fixed  inset-x-0 w-max mx-auto z-50", className)}>
+      <div className={cn("fixed top-[40px] inset-x-0 w-max mx-auto z-50", className)}>
        <Menu setActive={setActive}>
         <Link href={"/"}>
         <div className=' cursor-pointer font-bold text-3xl'>Shop.co</div>
