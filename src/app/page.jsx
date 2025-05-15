@@ -3,18 +3,50 @@ import Image from "next/image";
 import { NewArrivals } from "@/components/NewArrivalsCards";
 import { TopSelling } from "@/components/ TopSelling";
 import { Grid } from "@/components/Layoutgrid";
+import CustomerReviews from "@/components/CustomerReviews";
+ 
+ 
  
 function Home() {
   return (
-    <div className=" h-max w-screen">
-      <Image
-        src="/Rectangle 2.png"
-        className=" object-cover"
-        width={1440}
-        height={0}
-        alt="image"
-      ></Image>
-      <div className=" text-4xl  absolute z-[70] "> dcsjdajcnkl</div>
+    <div className="h-max w-screen">
+ 
+     
+        <Image
+          src="/Rectangle 2.png"
+          className="object-cover w-full"
+          width={1440}
+          height={600}
+          alt="hero image"
+        />
+    
+        <div className="absolute top-60 left-0  w-3xl flex flex-col justify-center gap-5 px-6 md:px-12 lg:px-24">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-integral font-bold text-black ">
+            FIND CLOTHES THAT MATCHES YOUR STYLE
+          </h1>
+          <p className="text-sm md:text-base  font-satoshi text-black/60  m">
+            Browse through our diverse range of meticulously crafted garments, designed <br /> to bring out your individuality and cater to your sense of style.
+          </p>
+          <button className="bg-black text-white font-satoshi py-2 px-12 rounded-full w-max hover:bg-black/80 transition-all duration-300">
+            Shop Now
+          </button>
+          <div className=" flex gap-8 mt-10 items-start ">
+            <div>
+              <h1 className="text-black font-satoshi text-[40px] font-bold">200+</h1>
+              <p  className="text-black/60 font-satoshi text-base font-normal leading-[22px]" >International Brands</p>
+            </div>
+            <div className=" border-x px-8 ">
+              <h1 className="text-black font-satoshi text-[40px] font-bold">2000+</h1>
+              <p  className="text-black/60 font-satoshi text-base font-normal leading-[22px]">High-Quality Products</p>
+            </div>
+            <div>
+              <h1 className="text-black font-satoshi text-[40px] font-bold">30000+</h1>
+              <p  className="text-black/60 font-satoshi text-base font-normal leading-[22px]">Happy Customers</p>
+            </div>
+          </div>
+        </div>
+     
+ 
       <div className="w-screen flex justify-between bg-black h-[100px] px-24 items-center shrink-0">
         <Image src="/Group.svg" height={120} width={120} alt="svg" />
         <Image src="/zara-logo-1 1.svg" height={80} width={80} alt="svg" />
@@ -42,9 +74,13 @@ function Home() {
     
 
       <Grid/>
-      <h1 className="text-black font-integral my-10 text-[48px] fon font-bold leading-none ml-24" >OUR HAPPY CUSTOMERS</h1>
-  
-
+      <h1 className="text-black font-integral text-center mt-10 text-[48px] font-bold leading-none " >OUR HAPPY CUSTOMERS</h1>
+    
+      <div className=" ml-24 ">
+        <CustomerReviews />
+      </div>
+      
+       
   
     </div>
   );
