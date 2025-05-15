@@ -1,62 +1,106 @@
 import React from 'react'
 import Image from 'next/image'
-function Footer() {
+
+// Reusable component for footer link column
+const FooterLinkColumn = ({ title, links }) => {
   return (
-     <div className="w-full bg-[#F0F0F0] h-[500px]  px-24 mt-auto pt-[140px] ">
-      <footer className="w-full  justify-between gap-[100px] flex ">
-      <div className=' flex flex-col gap-5'>
-        <h1 className=' text-black text-3xl font-bold '>
-          Shop.co
+    <div className='flex flex-col space-y-3 mb-8 md:mb-0 md:justify-between'>
+      <h1 className="text-black font-normal font-satoshi text-base leading-[18px] tracking-[3px] uppercase">
+        {title}
+      </h1>
+      {links.map((link, index) => (
+        <h1 key={index} className="text-black/60 font-normal font-satoshi text-base leading-[19px]">
+          {link}
         </h1>
-        <div className='  '>
-          We have clothes that suits your style and <br/> which you’re proud to wear. From <br />women to men.
-        </div>
-        <Image src="/social.svg" height={120} width={120} alt='social' /> 
+      ))}
+    </div>
+  )
+}
+
+// Reusable component for payment badge
+const PaymentBadge = ({ number }) => {
+  return (
+    <Image 
+      src={`/Badge${number ? `-${number}` : ''}.svg`} 
+      height={50} 
+      width={50} 
+      alt={`payment badge ${number || 1}`}
+      className="h-8 w-auto md:h-10"
+    />
+  )
+}
+
+function Footer() {
+  // Data for footer columns
+  const footerLinks = [
+    {
+      title: "Company",
+      links: ["About", "Features", "Works", "Career"]
+    },
+    {
+      title: "Help",
+      links: ["Customer support", "Terms & Conditions", "Delivery Details", "Privacy and Policy"]
+    },
+    {
+      title: "FAQ",
+      links: ["Accounts", "Manage Deliveries", "Orders", "Payments"]
+    },
+    {
+      title: "Resources",
+      links: ["Free ebooks", "Development tutorial", "How to blog", "Youtube playlist"]
+    }
+  ];
+
+ 
+  const paymentBadges = ["", "2", "3", "4", "5"];
+
+  return (
+    <div className="w-full bg-[#F0F0F0] min-h-[400px] px-6 sm:px-8 md:px-12 lg:px-24 mt-auto pt-16 md:pt-[140px]">
+      <footer className="w-full flex flex-col md:flex-row md:justify-between gap-8 md:gap-[50px] lg:gap-[100px]">
         
-      </div>
-      <div className=' flex flex-col justify-between'>
-        <h1  className="text-black font-normal text-base leading-[18px] tracking-[3px] uppercase ">Company</h1>
-        <h1 className="text-black/60 font-normal text-base leading-[19px] ">About</h1>
-         <h1 className="text-black/60 font-normal text-base leading-[19px] ">Features</h1>
-          <h1 className="text-black/60 font-normal text-base leading-[19px] ">Works</h1>
-           <h1 className="text-black/60 font-normal text-base leading-[19px] ">Career</h1>
-      </div>
-      <div className=' flex flex-col justify-between'>
-        <h1  className="text-black font-normal text-base leading-[18px] tracking-[3px] uppercase ">Help</h1>
-         <h1 className="text-black/60 font-normal text-base leading-[19px] ">Customer support</h1> 
-         <h1 className="text-black/60 font-normal text-base leading-[19px] ">Terms & Conditions</h1> 
-         <h1 className="text-black/60 font-normal text-base leading-[19px] ">Delivery Details</h1> 
-         <h1 className="text-black/60 font-normal text-base leading-[19px] ">Privacy and Policy</h1>
-      </div>
-      <div className=' flex flex-col justify-between'>
-        <h1  className="text-black font-normal text-base leading-[18px] tracking-[3px] uppercase ">FAQ</h1>
-         <h1 className="text-black/60 font-normal text-base leading-[19px] ">Accounts</h1> 
-         <h1 className="text-black/60 font-normal text-base leading-[19px] ">Manage Deliveries</h1> 
-         <h1 className="text-black/60 font-normal text-base leading-[19px] ">Orders</h1> 
-         <h1 className="text-black/60 font-normal text-base leading-[19px] ">Payments</h1>
-      </div>
-      <div className=' flex flex-col justify-between'>
-        <h1  className="text-black font-normal text-base leading-[18px] tracking-[3px] uppercase ">Resources</h1>
-         <h1 className="text-black/60 font-normal text-base leading-[19px] ">Free ebooks</h1> 
-         <h1 className="text-black/60 font-normal text-base leading-[19px] ">Development tutorial</h1> 
-         <h1 className="text-black/60 font-normal text-base leading-[19px] ">How to blog</h1> 
-         <h1 className="text-black/60 font-normal text-base leading-[19px] ">Youtube playlist</h1>
-      </div>
-       
-    </footer>
-    <div className=' w-full bg-black/10 h-0.5 my-10'></div>
-    <div className=' flex items-center justify-between'>
-      <h1 className="text-black/60 text-left  text-sm font-normal leading-none">Shop.co © 2000-2023, All Rights Reserved</h1>
-      <div className=' flex '>
-        <Image src="/Badge.svg" height={50} width={50} alt='badge'/>
-        <Image src="/Badge-2.svg" height={50} width={50} alt='badge'/>
-        <Image src="/Badge-3.svg" height={50} width={50} alt='badge'/>
-        <Image src="/Badge-4.svg" height={50} width={50} alt='badge'/>
-        <Image src="/Badge-5.svg" height={50} width={50} alt='badge'/>
+        <div className='flex flex-col gap-5 max-w-xs mb-10 md:mb-0'>
+          <h1 className='text-black font-integral text-2xl md:text-3xl font-bold'>
+            Shop.co
+          </h1>
+          <div className="text-sm font-satoshi md:text-base">
+            We have clothes that suits your style and which you're proud to wear. From women to men.
+          </div>
+          <Image 
+            src="/social.svg" 
+            height={120} 
+            width={120} 
+            alt='social'
+            className=" h-8 md:h-10" 
+          />
+        </div>
+
+ 
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-4 gap-y-8 md:flex md:flex-row md:justify-between md:flex-1">
+         
+          {footerLinks.map((column, index) => (
+            <FooterLinkColumn 
+              key={index}
+              title={column.title}
+              links={column.links}
+            />
+          ))}
+        </div>
+      </footer>
+
+      <div className='w-full bg-black/10 h-0.5 my-6 md:my-10'></div>
+      
+      <div className='flex flex-col sm:flex-row items-center sm:justify-between py-4'>
+        <h1 className="text-black/60 font-satoshi text-center sm:text-left text-xs sm:text-sm font-normal leading-none mb-4 sm:mb-0">
+          Shop.co © 2000-2023, All Rights Reserved
+        </h1>
+        <div className='flex space-x-2 md:space-x-3'>
+   
+          {paymentBadges.map((badge, index) => (
+            <PaymentBadge key={index} number={badge} />
+          ))}
+        </div>
       </div>
     </div>
-       
-     </div>
   )
 }
 

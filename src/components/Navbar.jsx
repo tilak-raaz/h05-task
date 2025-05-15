@@ -15,7 +15,7 @@ function Navbar({ className }) {
       <div className={cn(" top-[40px] inset-x-0 w-max mx-auto z-[50]", className)}>
        <Menu setActive={setActive}>
         <Link href={"/"}>
-        <div className=' cursor-pointer font-bold text-3xl'>Shop.co</div>
+        <div className=' cursor-pointer font-integral font-bold text-3xl'>Shop.co</div>
         </Link>
         <MenuItem setActive={setActive} active={active}  item="Shop">
            <div className="flex flex-col space-y-4 text-sm">
