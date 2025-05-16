@@ -20,34 +20,34 @@ function Home() {
           alt="hero image"
         />
     
-        <div className="absolute top-60 left-0  w-3xl flex flex-col justify-center gap-5 px-6 md:px-12 lg:px-24">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-integral font-bold text-black ">
+        <div className="absolute sm:top-48 sm:w-3/5 md:top-44 xl:top-52 lg:top-48  left-0  md:w-3/5 lg:w-2xl flex flex-col justify-center gap-3  md:gap-5 px-6 md:px-10 lg:px-12 xl:px-16">
+          <h1 className="   text-2xl md:text-3xl  lg:text-6xl xl:text-6xl font-integral font-bold text-black ">
             FIND CLOTHES THAT MATCHES YOUR STYLE
           </h1>
-          <p className="text-sm md:text-base  font-satoshi text-black/60  m">
-            Browse through our diverse range of meticulously crafted garments, designed <br /> to bring out your individuality and cater to your sense of style.
+          <p className="text-xs md:text-base  font-satoshi text-black/60  ">
+            Browse through our diverse range of meticulously crafted garments, designed <br className=" hidden lg:block" /> to bring out your individuality and cater to your sense of style.
           </p>
           <button className="bg-black text-white font-satoshi py-2 px-12 rounded-full w-max hover:bg-black/80 transition-all duration-300">
             Shop Now
           </button>
-          <div className=" flex gap-8 mt-10 items-start ">
+          <div className=" flex gap-2 lg:gap-4  xl:gap-8 lg:mt-10 items-start ">
             <div>
-              <h1 className="text-black font-satoshi text-[40px] font-bold">200+</h1>
-              <p  className="text-black/60 font-satoshi text-base font-normal leading-[22px]" >International Brands</p>
+              <h1 className="text-black font-satoshi text-base md:text-xl lg:text-3xl xl:text-[40px] font-bold">200+</h1>
+              <p  className="text-black/60 font-satoshi text-sm md:text-base font-normal leading-[22px]" >International Brands</p>
             </div>
-            <div className=" border-x px-8 ">
-              <h1 className="text-black font-satoshi text-[40px] font-bold">2000+</h1>
-              <p  className="text-black/60 font-satoshi text-base font-normal leading-[22px]">High-Quality Products</p>
+            <div className=" border-x  px-2 lg:px-4 xl:px-8 ">
+              <h1 className="text-black font-satoshi text-base md:text-xl lg:text-3xl xl:text-[40px] font-bold">2000+</h1>
+              <p  className="text-black/60 font-satoshi text-sm md:text-base font-normal leading-[22px]">High-Quality Products</p>
             </div>
             <div>
-              <h1 className="text-black font-satoshi text-[40px] font-bold">30000+</h1>
-              <p  className="text-black/60 font-satoshi text-base font-normal leading-[22px]">Happy Customers</p>
+              <h1 className="text-black font-satoshi text-base md:text-xl lg:text-3xl xl:text-[40px] font-bold">30000+</h1>
+              <p  className="text-black/60 font-satoshi text-sm md:text-base font-normal leading-[22px]">Happy Customers</p>
             </div>
           </div>
         </div>
      
  
-      <div className="w-screen flex justify-between bg-black h-[100px] px-24 items-center shrink-0">
+      <div className="w-screen flex justify-between bg-black h-[100px] px-3 md:px-5 lg:px-24 items-center flex-wrap  ">
         <Image src="/Group.svg" height={120} width={120} alt="svg" />
         <Image src="/zara-logo-1 1.svg" height={80} width={80} alt="svg" />
         <Image src="/gucci-logo-1 1.svg" height={100} width={100} alt="svg" />
